@@ -15,22 +15,22 @@ $('.form-submit').click(function(e) {
     $(".error").remove();
     
     if (first_name.length < 1) {
-      $('.firstName').addClass("inputError").after('<span class="error">This field is required</span>');
+      $('.firstName').addClass("inputError").after('<span class="error">First Name cannot be empty</span>');
     }
     if (last_name.length < 1) {
-      $('.lastName').addClass("inputError").after('<span class="error">This field is required</span>');
+      $('.lastName').addClass("inputError").after('<span class="error">Last Name cannot be empty</span>');
     }
     if (email.length < 1) {
-      $('.email').addClass("inputError").after('<span class="error">This field is required</span>');
+      $('.email').addClass("inputError").after('<span class="error">Email cannot be empty</span>');
     } else {
-      var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
-    //   var validEmail = regEx.test(email);
-    //   if (!validEmail) {
-    //     $('.email').addClass("inputError").after('<span class="error">Enter a valid email</span>');
-    //   }
+      var regEx = /[^@]+@[^\.]+\..+/g;
+       var validEmail = regEx.test(email);
+       if (!validEmail) {
+         $('.email').addClass("inputError").after('<span class="error">Looks like this is not an email</span>');
+       }
     }
-    if (password.length < 8) {
-      $('.password').addClass("inputError").after('<span class="error">Password must be at least 8 characters long</span>');
+    if (password.length < 1) {
+      $('.password').addClass("inputError").after('<span class="error">Password cannot be empty</span>');
     }
   });
  

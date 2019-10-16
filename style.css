@@ -1,164 +1,215 @@
-:root{
-  --primary-red : hsl(0, 100%, 74%) ;
-  --primary-green:hsl(154, 59%, 51%);
-  --accent:   hsl(248, 32%, 49%);
-  --ntrl-dark-blue: hsl(249, 10%, 26%);
-  --ntrl-gray-blue: hsl(246, 25%, 77%);
-  --font-poppins : 'Poppins', sans-serif;
+:root {
+    --primary-red: hsl(0, 100%, 74%);
+    --primary-green: hsl(154, 59%, 51%);
+    --accent: hsl(248, 32%, 49%);
+    --ntrl-dark-blue: hsl(249, 10%, 26%);
+    --ntrl-gray-blue: hsl(246, 25%, 77%);
+    --font-poppins: 'Poppins', sans-serif;
 }
 
-*{
+* {
     box-sizing: border-box;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
-html{
-    font-size:16px;
+
+html {
+    font-size: 16px;
     max-width: 1440px;
-    background-color:var(--primary-red);
+    background-color: var(--primary-red);
 }
-@media screen and (max-width:768px){
-    html{
-        max-width:375px;
+
+@media screen and (max-width:768px) {
+    html {
+        max-width: 375px;
     }
 }
-body{
+
+@-moz-document url-prefix() {
+
+    /* Disable scrollbar Firefox */
+    html {
+        scrollbar-width: none;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* Disable scrollbar Chrome/Safari/Webkit */
+}
+
+body {
     background-image: url(./images/bg-intro-desktop.png);
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
-    z-index:1;
-    height:100vh;
+    z-index: 1;
+    margin: 0;
+    /* remove default margin */
+    scrollbar-width: none;
+    /* Also needed to disable scrollbar Firefox */
+    -ms-overflow-style: none;
+    /* Disable scrollbar IE 10+ */
+    overflow-y: scroll;
 }
-.cta{
-    color:white;
-    font-family:var(--font-poppins);
+
+.cta {
+    color: white;
+    font-family: var(--font-poppins);
     padding: 80px 120px;
-    display:flex;
-    flex-flow:row nowrap;
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
 }
-@media screen and (max-width:768px){
- .cta{
-     flex-direction:column;
-     padding:80px 40px;
- }
+
+@media screen and (max-width:768px) {
+    .cta {
+        flex-direction: column;
+        padding: 80px 40px;
+    }
 }
-.cta-info{
+
+.cta-info {
     flex: 0 1 50%;
 }
-.cta-heading{
-    font-size:3em;
-    margin-bottom:20px;
+
+.cta-heading {
+    font-size: 3em;
+    margin-bottom: 20px;
 }
-@media screen and (max-width:768px){
-    .cta-heading{
-        font-size:2em;
-        text-align:center;
+
+@media screen and (max-width:768px) {
+    .cta-heading {
+        font-size: 2em;
+        text-align: center;
     }
-    .cta{
-        align-items:center;
-        justify-content:space-between;
+
+    .cta {
+        align-items: center;
+        justify-content: space-between;
     }
-    .cta-p{
-        text-align:center;
-        margin-bottom:50px;
+
+    .cta-p {
+        text-align: center;
+        margin-bottom: 50px;
     }
-   }
-.cta-form{
-    display:flex;
+}
+
+.cta-form {
+    display: flex;
     flex: 0 1 40%;
     flex-direction: column;
     justify-content: space-between;
-    align-items:stretch;
-    height:100%;
-    min-height:0;
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
 }
-.form-header{
+
+.form-header {
     flex: 0 1 20%;
-    background-color:var(--accent);
-    padding:15px 40px;
-    font-size:0.8em;
-    text-align:center;
-    margin-bottom:20px;
+    background-color: var(--accent);
+    padding: 15px 40px;
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 20px;
     box-shadow: 0px 5px 5px var(--ntrl-dark-blue);
-    border-radius:6px;
-    
+    border-radius: 6px;
+
 }
-.em{
-    font-weight:700;
+
+.em {
+    font-weight: 700;
 }
-.form{
-    display:flex;
-    flex-direction:column;
-    background-color:white;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
     box-shadow: 0px 3px 5px var(--ntrl-dark-blue);
     padding: 25px;
-    border-radius:6px;
+    border-radius: 6px;
 }
 
 
-.input-cont{
-    margin-bottom:20px;
-    width:100%;
-    
+.input-cont {
+    margin-bottom: 20px;
+    width: 100%;
+
 }
-.input-cont img{ 
-    position:relative;
-    right:0;
+
+.input-cont img {
+    position: relative;
+    right: 0;
 }
+
 .input-cont input {
     padding: 13px 25px;
-    border-radius:6px;
-    width:100%;
-    outline:0;
+    border-radius: 6px;
+    width: 100%;
+    outline: 0;
     border: 1px solid var(--ntrl-gray-blue);
-    font-weight:500;
-    color:var(--ntrl-dark-blue);
-    font-size:0.8em;
-    font-weight:700;
-    
- 
+    font-weight: 500;
+    color: var(--ntrl-dark-blue);
+    font-size: 0.8em;
+    font-weight: 700;
+
+
 }
-.inputError{
+
+.inputError {
     background-image: url(images/icon-error.svg);
     background-position: 98% 7px;
     background-repeat: no-repeat;
-    border-color:var(--primary-red)!important;
+    border-color: var(--primary-red) !important;
 }
+
 .error {
-    color:var(--primary-red);
-    font-size:0.8em;
-    font-weight: 700;
-    text-align:right;
-    margin-left: 5px;
-  }
-.form input:focus{
+    color: var(--primary-red);
+    font-size: 0.8em;
+    font-weight: 500;
+    text-align: right;
+    margin-right:5px;
+    width:100%;
+    font-style:italic;
+    display:block;
+}
+
+.form input:focus {
     border: 1px solid var(--ntrl-dark-blue);
 }
-.form-submit{
-    background-color:var(--primary-green);
+
+.form-submit {
+    background-color: var(--primary-green);
     padding: 15px 20px;
-    color:white;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    font-size:0.8em;
-    font-weight:600;
-    outline:0;
-    border:0;
-    border-radius:5px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+    font-weight: 600;
+    outline:none;
+    border: 0;
+    border-radius: 5px;
     box-shadow: 0px 1px 3px var(--ntrl-dark-blue);
 }
-.form-footer{
-    font-size:.6em;
-    text-align:center;
-    color:var(--ntrl-gray-blue);
-    font-weight:500;
+.form-submit:focus{
+    outline:none;
+}
+.form-submit:active{
+    background-color: hsl(154, 86%, 60%);
+    outline:none;
+}
+.form-footer {
+    font-size: .6em;
+    text-align: center;
+    color: var(--ntrl-gray-blue);
+    font-weight: 500;
     padding: 10px;
 }
-.form-link{
-    color:var(--primary-red);
-    text-decoration:none;
-    font-weight:700;
-    
+
+.form-link {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 700;
+
 }
